@@ -13,6 +13,7 @@ RUN apt-get install -y php-common
 RUN apt-get install -y php-mbstring 
 
 CMD ["apachectl","-D","FOREGROUND"]
+CMD echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN a2enmod rewrite
 EXPOSE 80
 EXPOSE 443
